@@ -1,0 +1,45 @@
+# Site settings
+title_left    : "Jaroslav Urban"
+title_right   : " blog"
+description   : "Minimalist blog."
+keywords      : "Jekyll, blog, AI, books, philosophy, cvut, ctu, fit"
+url           : https://jaroslavurbann.github.io # site url
+baseurl       : ""
+cover         : ""
+
+google_analytics  : UA-XXXXX-XX
+twitter_username  : "JaroslavUrbann"
+comments_enabled  : false
+disqus_shortname  : ""
+postshare_enabled : false
+
+# Build settings
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : rouge
+
+source      : ./
+destination : ./_site
+
+# Sass configuration
+sass:
+  sass_dir  : assets/scss
+  style     : compressed # expanded
+
+# Author settings
+author:
+  name     : "Jaroslav Urban"
+
+plugins:
+  - jekyll-sitemap
+  - bourbon
+  - jekyll-paginate
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "script", "vendor"]
