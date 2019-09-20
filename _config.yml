@@ -3,8 +3,8 @@ title_left    : "Jaroslav Urban"
 title_right   : " blog"
 description   : "Minimalist blog."
 keywords      : "Jekyll, blog, AI, books, philosophy, cvut, ctu, fit"
-url           : https://jaroslavurbann.github.io # site url
-baseurl       : ""
+url           : https://jaroslavurbann.github.io
+baseurl       : "/xaxa"
 cover         : ""
 
 google_analytics  : UA-XXXXX-XX
