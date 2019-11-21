@@ -4,7 +4,7 @@ title_right   : " blog"
 description   : "Minimalist blog."
 keywords      : "Jekyll, blog, AI, books, philosophy, cvut, ctu, fit"
 url           : https://jaroslavurbann.github.io
-baseurl       : "/xaxa"
+baseurl       : "/blog"
 cover         : ""
 
 google_analytics  : UA-XXXXX-XX
@@ -30,7 +30,7 @@ sass:
 author:
   name     : "Jaroslav Urban"
 
-plugins:
+plugins_dir:
   - jekyll-sitemap
   - bourbon
   - jekyll-paginate
