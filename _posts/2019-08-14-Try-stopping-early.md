@@ -1,6 +1,6 @@
 If you're a competitive person, then you like spending your time effectively.
 The natural time spent distribution of any sort of endeavor looks something like this:
 
-![The typical distribution of your interest and time spent](https://github.com/JaroslavUrbann/blog/blob/master/assets/images/time_graph.png)
+![The typical distribution of your interest and time spent](https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/time_graph.png)
 
 An old Czech proverb says that you should "end at the height of things". It's not something many people do, simply because their interest still brings them pleasure and they don't want to or don't have the will power, to end things abruptly. Quite often you see people who stopped giving their fullest to a sport, yet they still hang around for a few years, missing workouts here and there and seemingly just doing everything out of habit, with no real goal in mind. Or people who are now adults and still come back to videogames, but always ever less so often than before, until they eventually stop altogether. Or people who still hang on to their old partners, even though they know that their relationship is dying down and won't stand the test of time in the ensuing few years. If you feel like you're reaching the right slope of the graph, man up, overcome nostalgia and completely cut it out of your life and you'll be rewarded by only remembering the good times.
