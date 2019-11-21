@@ -1,3 +1,1 @@
-# Overcoming procrastination			
-
 The key is in setting a specific goal. If you wish to be wealthy, then that's a great start to becoming wealthy, but it's not a great goal. **Great goals should make you do things to achieve them**. When wishing to be wealthy, a great goal would be to, for example, launch a startup. It's quite simple to see what things a startup CEO should know/do. They should study basic economics, follow current trends, learn how to be likable, read relevant books, etc.. And since you already have these things in your head, you'll be inclined to pick a few that you like and start studying. It comes down to being able to see the specific things that you're missing and you'll automatically start filling the gaps to get closer to your goal.

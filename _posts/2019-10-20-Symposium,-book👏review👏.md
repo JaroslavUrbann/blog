@@ -1,5 +1,3 @@
-# Symposium, book👏review👏
-
 I read the whole book and I liked it, but I felt like I needed something more logic-based after I finished reading it.
 
 

@@ -1,5 +1,3 @@
-# AI Superpowers, book👏review👏
-
 ## Random notes on a book by Kai-fu Lee
 
 Its the first book on AI I ever read. Unfortunately, I stopped in about 3/4 of the book, I felt like it was getting repetitive.
