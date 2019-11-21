@@ -5,15 +5,13 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Nov 2019 23:21:10 +0100</pubDate>
-    <lastBuildDate>Thu, 21 Nov 2019 23:21:10 +0100</lastBuildDate>
+    <pubDate>Thu, 21 Nov 2019 23:28:48 +0100</pubDate>
+    <lastBuildDate>Thu, 21 Nov 2019 23:28:48 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Symposium, Book👏review👏</title>
-        <description>&lt;h1 id=&quot;symposium-bookreview&quot;&gt;Symposium, book👏review👏&lt;/h1&gt;
-
-&lt;p&gt;I read the whole book and I liked it, but I felt like I needed something more logic-based after I finished reading it.&lt;/p&gt;
+        <description>&lt;p&gt;I read the whole book and I liked it, but I felt like I needed something more logic-based after I finished reading it.&lt;/p&gt;
 
 &lt;h2 id=&quot;random-note&quot;&gt;Random note&lt;/h2&gt;
 &lt;ul&gt;
@@ -50,9 +48,7 @@
     
       <item>
         <title>Ai Superpowers, Book👏review👏</title>
-        <description>&lt;h1 id=&quot;ai-superpowers-bookreview&quot;&gt;AI Superpowers, book👏review👏&lt;/h1&gt;
-
-&lt;h2 id=&quot;random-notes-on-a-book-by-kai-fu-lee&quot;&gt;Random notes on a book by Kai-fu Lee&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;random-notes-on-a-book-by-kai-fu-lee&quot;&gt;Random notes on a book by Kai-fu Lee&lt;/h2&gt;
 
 &lt;p&gt;Its the first book on AI I ever read. Unfortunately, I stopped in about 3/4 of the book, I felt like it was getting repetitive.&lt;/p&gt;
 
@@ -93,12 +89,10 @@
     
       <item>
         <title>Try Stopping Early</title>
-        <description>&lt;h1 id=&quot;try-stopping-early&quot;&gt;Try stopping early&lt;/h1&gt;
-
-&lt;p&gt;If you’re a competitive person, then you like spending your time effectively.
+        <description>&lt;p&gt;If you’re a competitive person, then you like spending your time effectively.
 The natural time spent distribution of any sort of endeavor looks something like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/JaroslavUrbann/blog/tree/master/assets/images/time_graph.png&quot; alt=&quot;The typical distribution of your interest and time spent&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/JaroslavUrbann/blog/blob/master/assets/images/time_graph.png&quot; alt=&quot;The typical distribution of your interest and time spent&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;An old Czech proverb says that you should “end at the height of things”. It’s not something many people do, simply because their interest still brings them pleasure and they don’t want to or don’t have the will power, to end things abruptly. Quite often you see people who stopped giving their fullest to a sport, yet they still hang around for a few years, missing workouts here and there and seemingly just doing everything out of habit, with no real goal in mind. Or people who are now adults and still come back to videogames, but always ever less so often than before, until they eventually stop altogether. Or people who still hang on to their old partners, even though they know that their relationship is dying down and won’t stand the test of time in the ensuing few years. If you feel like you’re reaching the right slope of the graph, man up, overcome nostalgia and completely cut it out of your life and you’ll be rewarded by only remembering the good times.&lt;/p&gt;
 </description>
@@ -111,9 +105,7 @@ The natural time spent distribution of any sort of endeavor looks something like
     
       <item>
         <title>Overcomming Procrastination</title>
-        <description>&lt;h1 id=&quot;overcoming-procrastination&quot;&gt;Overcoming procrastination&lt;/h1&gt;
-
-&lt;p&gt;The key is in setting a specific goal. If you wish to be wealthy, then that’s a great start to becoming wealthy, but it’s not a great goal. &lt;strong&gt;Great goals should make you do things to achieve them&lt;/strong&gt;. When wishing to be wealthy, a great goal would be to, for example, launch a startup. It’s quite simple to see what things a startup CEO should know/do. They should study basic economics, follow current trends, learn how to be likable, read relevant books, etc.. And since you already have these things in your head, you’ll be inclined to pick a few that you like and start studying. It comes down to being able to see the specific things that you’re missing and you’ll automatically start filling the gaps to get closer to your goal.&lt;/p&gt;
+        <description>&lt;p&gt;The key is in setting a specific goal. If you wish to be wealthy, then that’s a great start to becoming wealthy, but it’s not a great goal. &lt;strong&gt;Great goals should make you do things to achieve them&lt;/strong&gt;. When wishing to be wealthy, a great goal would be to, for example, launch a startup. It’s quite simple to see what things a startup CEO should know/do. They should study basic economics, follow current trends, learn how to be likable, read relevant books, etc.. And since you already have these things in your head, you’ll be inclined to pick a few that you like and start studying. It comes down to being able to see the specific things that you’re missing and you’ll automatically start filling the gaps to get closer to your goal.&lt;/p&gt;
 </description>
         <pubDate>Sun, 21 Jul 2019 00:00:00 +0200</pubDate>
         <link>https://jaroslavurbann.github.io/blog/2019/Overcomming-procrastination/</link>
