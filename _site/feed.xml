@@ -5,12 +5,78 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Nov 2019 00:10:37 +0100</pubDate>
-    <lastBuildDate>Fri, 22 Nov 2019 00:10:37 +0100</lastBuildDate>
+    <pubDate>Mon, 25 Nov 2019 00:48:23 +0100</pubDate>
+    <lastBuildDate>Mon, 25 Nov 2019 00:48:23 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Symposium, Book👏review👏</title>
+        <title>Progtest Explained, Water Tanks!</title>
+        <description>
+&lt;h1 id=&quot;progtest-explained---water-tanks&quot;&gt;Progtest explained - Water tanks!&lt;/h1&gt;
+
+&lt;h2 id=&quot;problem-description&quot;&gt;Problem description&lt;/h2&gt;
+&lt;p&gt;The task is to write a program that can compute the altitude of the water surface in a system of water tanks.&lt;/p&gt;
+
+&lt;p&gt;Let’s say that there is a water company that manages water tanks. Every water tank has a block-like shape and is connected to every other water tank with tubes of zero volume (to ease our calculations). The situation is as given:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/water_tanks.png&quot; alt=&quot;Image from the original Progtest problem&quot; /&gt;
+&lt;em&gt;Image from the original Progtest problem&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The input is a set of n (n &amp;lt;= 200 000) water tanks defined as Alt H W D. Alt is the altitude of the bottom of a given water tank, H is the height, W is the width and D is the depth.&lt;/p&gt;
+
+&lt;p&gt;Next comes a sequence of queries with different volumes of water. &lt;strong&gt;The task is to compute the altitude of the water surface&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-cultivating-our-data&quot;&gt;1) Cultivating our data&lt;/h3&gt;
+
+&lt;p&gt;Firstly, the width and depth of a water tank can be multiplied and combined into a single variable containing the area of a base of a given water tank.&lt;/p&gt;
+
+&lt;p&gt;Secondly, the altitude and height of a water tank can also be combined into (semantically) one variable, the altitude of the lower base (Alt) and altitude of the upper base (Alt + H).&lt;/p&gt;
+
+&lt;p&gt;We now have &lt;strong&gt;2 types of variables:&lt;/strong&gt; altitudes and areas.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-the-imagination-bit&quot;&gt;2) The imagination bit&lt;/h3&gt;
+
+&lt;p&gt;Now imagine going from the lowest point of our water tank system to the highest point of our water tank system. The total water area would change based on our water tanks being “added” and “removed” as we go.&lt;/p&gt;
+
+&lt;p&gt;We should try and represent that with our data.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-creating-our-dataset&quot;&gt;3) Creating our dataset&lt;/h3&gt;
+
+&lt;p&gt;Notice that our input data can be easily transformed into 2n objects with the following two attributes: area_added and altitude. Let’s call these objects thresholds and look at the example below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/thresholds.png&quot; alt=&quot;Visualizing Thresholds&quot; /&gt;
+&lt;em&gt;Note the minuses in area_added in the top thresholds.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If we save our thresholds in an array and sort them by altitude, we can imagine our area_added attributes looking like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/arr1.png&quot; alt=&quot;Our array&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;4-transformations-transformations&quot;&gt;4) Transformations, transformations&lt;/h3&gt;
+
+&lt;p&gt;If we iterate over the array once and add up our surfaces, we can visualize the state of our array like this, aka &lt;strong&gt;the total surface at each altitude&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/arr2.png&quot; alt=&quot;Our array after the first transformation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we now take an item from the array and multiply its area with (altitude of the next item - our items’ altitude), &lt;strong&gt;we get the total volume between 2 altitudes&lt;/strong&gt;. Since we want to query the global total volume, we just need to iterate the array once more and take these intermediate volumes and add them all together into an array that’s telling us the cumulative volume of our water tank system.&lt;/p&gt;
+
+&lt;p&gt;After these transformations, we get an array with &lt;strong&gt;the cumulative volume of our water tank system.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Remember, our now array stores 2 types of information at each index, the altitude and the total volume of our system up to that altitude.&lt;/p&gt;
+
+&lt;p&gt;So we can now perform a simple binary search on our array to get upper and lower altitude boundaries for our volume and calculate the real altitude with:&lt;/p&gt;
+
+&lt;p&gt;real altitude = the altitude of the lower boundary + (the altitude of the upper boundary - the altitude of the lower boundary) * (the queried volume - the volume of the lower boundary) / (the total volume of the upper boundary - the total volume of the lower boundary)&lt;/p&gt;
+</description>
+        <pubDate>Mon, 25 Nov 2019 00:00:00 +0100</pubDate>
+        <link>https://jaroslavurbann.github.io/blog/2019/Progtest-explained,-Water-tanks!/</link>
+        <guid isPermaLink="true">https://jaroslavurbann.github.io/blog/2019/Progtest-explained,-Water-tanks!/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Symposium, Book 👏 Review 👏</title>
         <description>&lt;p&gt;I read the whole book and I liked it, but I felt like I needed something more logic-based after I finished reading it.&lt;/p&gt;
 
 &lt;h2 id=&quot;random-note&quot;&gt;Random note&lt;/h2&gt;
@@ -40,14 +106,14 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 20 Oct 2019 00:00:00 +0200</pubDate>
-        <link>https://jaroslavurbann.github.io/blog/2019/Symposium,-book-review/</link>
-        <guid isPermaLink="true">https://jaroslavurbann.github.io/blog/2019/Symposium,-book-review/</guid>
+        <link>https://jaroslavurbann.github.io/blog/2019/Symposium,-Book-Review/</link>
+        <guid isPermaLink="true">https://jaroslavurbann.github.io/blog/2019/Symposium,-Book-Review/</guid>
         
         
       </item>
     
       <item>
-        <title>Ai Superpowers, Book👏review👏</title>
+        <title>Ai Superpowers, Book 👏 Review 👏</title>
         <description>&lt;h2 id=&quot;random-notes-on-a-book-by-kai-fu-lee&quot;&gt;Random notes on a book by Kai-fu Lee&lt;/h2&gt;
 
 &lt;p&gt;Its the first book on AI I ever read. Unfortunately, I stopped in about 3/4 of the book, I felt like it was getting repetitive.&lt;/p&gt;
@@ -81,8 +147,8 @@
 
 </description>
         <pubDate>Tue, 10 Sep 2019 00:00:00 +0200</pubDate>
-        <link>https://jaroslavurbann.github.io/blog/2019/AI-Superpowers,-book-review/</link>
-        <guid isPermaLink="true">https://jaroslavurbann.github.io/blog/2019/AI-Superpowers,-book-review/</guid>
+        <link>https://jaroslavurbann.github.io/blog/2019/AI-Superpowers,-Book-Review/</link>
+        <guid isPermaLink="true">https://jaroslavurbann.github.io/blog/2019/AI-Superpowers,-Book-Review/</guid>
         
         
       </item>
@@ -92,7 +158,7 @@
         <description>&lt;p&gt;If you’re a competitive person, then you like spending your time effectively.
 The natural time spent distribution of any sort of endeavor looks something like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/time_graph.png&quot; alt=&quot;The typical distribution of your interest and time spent&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/time_graph.png&quot; alt=&quot;The typical distribution of your interest and time spent&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;An old Czech proverb says that you should “end at the height of things”. It’s not something many people do, simply because their interest still brings them pleasure and they don’t want to or don’t have the will power, to end things abruptly. Quite often you see people who stopped giving their fullest to a sport, yet they still hang around for a few years, missing workouts here and there and seemingly just doing everything out of habit, with no real goal in mind. Or people who are now adults and still come back to videogames, but always ever less so often than before, until they eventually stop altogether. Or people who still hang on to their old partners, even though they know that their relationship is dying down and won’t stand the test of time in the ensuing few years. If you feel like you’re reaching the right slope of the graph, man up, overcome nostalgia and completely cut it out of your life and you’ll be rewarded by only remembering the good times.&lt;/p&gt;
 </description>

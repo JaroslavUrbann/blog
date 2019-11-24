@@ -1,0 +1,56 @@
+
+<h1 id="progtest-explained---water-tanks">Progtest explained - Water tanks!</h1>
+
+<h2 id="problem-description">Problem description</h2>
+<p>The task is to write a program that can compute the altitude of the water surface in a system of water tanks.</p>
+
+<p>Let’s say that there is a water company that manages water tanks. Every water tank has a block-like shape and is connected to every other water tank with tubes of zero volume (to ease our calculations). The situation is as given:</p>
+
+<p><img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/water_tanks.png" alt="Image from the original Progtest problem" />
+<em>Image from the original Progtest problem</em></p>
+
+<p>The input is a set of n (n &lt;= 200 000) water tanks defined as Alt H W D. Alt is the altitude of the bottom of a given water tank, H is the height, W is the width and D is the depth.</p>
+
+<p>Next comes a sequence of queries with different volumes of water. <strong>The task is to compute the altitude of the water surface</strong>.</p>
+
+<h2 id="the-solution">The solution</h2>
+
+<h3 id="1-cultivating-our-data">1) Cultivating our data</h3>
+
+<p>Firstly, the width and depth of a water tank can be multiplied and combined into a single variable containing the area of a base of a given water tank.</p>
+
+<p>Secondly, the altitude and height of a water tank can also be combined into (semantically) one variable, the altitude of the lower base (Alt) and altitude of the upper base (Alt + H).</p>
+
+<p>We now have <strong>2 types of variables:</strong> altitudes and areas.</p>
+
+<h3 id="2-the-imagination-bit">2) The imagination bit</h3>
+
+<p>Now imagine going from the lowest point of our water tank system to the highest point of our water tank system. The total water area would change based on our water tanks being “added” and “removed” as we go.</p>
+
+<p>We should try and represent that with our data.</p>
+
+<h3 id="3-creating-our-dataset">3) Creating our dataset</h3>
+
+<p>Notice that our input data can be easily transformed into 2n objects with the following two attributes: area_added and altitude. Let’s call these objects thresholds and look at the example below:</p>
+
+<p><img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/thresholds.png" alt="Visualizing Thresholds" />
+<em>Note the minuses in area_added in the top thresholds.</em></p>
+
+<p>If we save our thresholds in an array and sort them by altitude, we can imagine our area_added attributes looking like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/arr1.png" alt="Our array" /></p>
+<h3 id="4-transformations-transformations">4) Transformations, transformations</h3>
+
+<p>If we iterate over the array once and add up our surfaces, we can visualize the state of our array like this, aka <strong>the total surface at each altitude</strong>:</p>
+
+<p><img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/arr2.png" alt="Our array after the first transformation" /></p>
+
+<p>If we now take an item from the array and multiply its area with (altitude of the next item - our items’ altitude), <strong>we get the total volume between 2 altitudes</strong>. Since we want to query the global total volume, we just need to iterate the array once more and take these intermediate volumes and add them all together into an array that’s telling us the cumulative volume of our water tank system.</p>
+
+<p>After these transformations, we get an array with <strong>the cumulative volume of our water tank system.</strong></p>
+
+<p>Remember, our now array stores 2 types of information at each index, the altitude and the total volume of our system up to that altitude.</p>
+
+<p>So we can now perform a simple binary search on our array to get upper and lower altitude boundaries for our volume and calculate the real altitude with:</p>
+
+<p>real altitude = the altitude of the lower boundary + (the altitude of the upper boundary - the altitude of the lower boundary) * (the queried volume - the volume of the lower boundary) / (the total volume of the upper boundary - the total volume of the lower boundary)</p>
