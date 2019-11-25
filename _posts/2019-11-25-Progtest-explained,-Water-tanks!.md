@@ -4,6 +4,7 @@ The task is to write a program that can compute the altitude of the water surfac
 Let's say that there is a water company that manages water tanks. Every water tank has a block-like shape and is connected to every other water tank with tubes of zero volume (to ease our calculations). The situation is as given:
 
 ![Image from the original Progtest problem](https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/water_tanks.png)
+<br/><br/>
 *Image from the original Progtest problem*
 
 The input is a set of n (n <= 200 000) water tanks defined as Alt H W D. Alt is the altitude of the bottom of a given water tank, H is the height, W is the width and D is the depth.

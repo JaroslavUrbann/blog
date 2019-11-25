@@ -5,8 +5,8 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Nov 2019 01:23:04 +0100</pubDate>
-    <lastBuildDate>Mon, 25 Nov 2019 01:23:04 +0100</lastBuildDate>
+    <pubDate>Mon, 25 Nov 2019 01:36:12 +0100</pubDate>
+    <lastBuildDate>Mon, 25 Nov 2019 01:36:12 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -17,6 +17,7 @@
 &lt;p&gt;Let’s say that there is a water company that manages water tanks. Every water tank has a block-like shape and is connected to every other water tank with tubes of zero volume (to ease our calculations). The situation is as given:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/water_tanks.png&quot; alt=&quot;Image from the original Progtest problem&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;
 &lt;em&gt;Image from the original Progtest problem&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The input is a set of n (n &amp;lt;= 200 000) water tanks defined as Alt H W D. Alt is the altitude of the bottom of a given water tank, H is the height, W is the width and D is the depth.&lt;/p&gt;
