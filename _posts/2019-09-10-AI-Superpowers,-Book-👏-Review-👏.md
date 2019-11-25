@@ -1,6 +1,7 @@
 ## Random notes on a book by Kai-fu Lee
 
 Its the first book on AI I ever read. Unfortunately, I stopped in about 3/4 of the book, I felt like it was getting repetitive.
+<p>&nbsp;</p>
 
 * I liked the authors' notes on China, it's a topic I'm very interested in. Here are some thoughts that I haven't heard before:
 	* Mobile apps are done differently in western countries - many apps for many different things instead of one big one for everything.

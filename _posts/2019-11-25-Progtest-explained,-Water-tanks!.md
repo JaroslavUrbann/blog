@@ -1,6 +1,3 @@
-
-# Progtest explained - Water tanks!
-
 ## Problem description
 The task is to write a program that can compute the altitude of the water surface in a system of water tanks.
 
@@ -12,7 +9,7 @@ Let's say that there is a water company that manages water tanks. Every water ta
 The input is a set of n (n <= 200 000) water tanks defined as Alt H W D. Alt is the altitude of the bottom of a given water tank, H is the height, W is the width and D is the depth.
 
 Next comes a sequence of queries with different volumes of water. **The task is to compute the altitude of the water surface**.
-
+<p>&nbsp;</p>
 
 ## The solution
 
@@ -41,6 +38,7 @@ Notice that our input data can be easily transformed into 2n objects with the fo
 If we save our thresholds in an array and sort them by altitude, we can imagine our area_added attributes looking like this:
 
 ![Our array](https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/arr1.png)
+
 ### 4) Transformations, transformations
 
 If we iterate over the array once and add up our surfaces, we can visualize the state of our array like this, aka **the total surface at each altitude**:
@@ -56,4 +54,4 @@ Remember, our now array stores 2 types of information at each index, the altitud
 
 So we can now perform a simple binary search on our array to get upper and lower altitude boundaries for our volume and calculate the real altitude with:
 
-real altitude = the altitude of the lower boundary + (the altitude of the upper boundary - the altitude of the lower boundary) * (the queried volume - the volume of the lower boundary) / (the total volume of the upper boundary - the total volume of the lower boundary)
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\\&space;A_L&space;=&space;\text{Altitude&space;of&space;the&space;lower&space;boundary}\\&space;A_U&space;=&space;\text{Altitude&space;of&space;the&space;upper&space;boundary}\\&space;V_Q&space;=&space;\text{Queried&space;volume}\\&space;V_L&space;=&space;\text{Volume&space;of&space;the&space;lower&space;boundry}\\&space;V_U&space;=&space;\text{Volume&space;of&space;the&space;upper&space;boundry}\\&space;\\&space;V&space;=&space;A_L&space;&plus;&space;(A_U&space;&plus;&space;A_L)&space;\cdot&space;\tfrac{V_Q&space;-&space;V_L}{V_U&space;-&space;V_L}\\" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;\\&space;A_L&space;=&space;\text{Altitude&space;of&space;the&space;lower&space;boundary}\\&space;A_U&space;=&space;\text{Altitude&space;of&space;the&space;upper&space;boundary}\\&space;V_Q&space;=&space;\text{Queried&space;volume}\\&space;V_L&space;=&space;\text{Volume&space;of&space;the&space;lower&space;boundry}\\&space;V_U&space;=&space;\text{Volume&space;of&space;the&space;upper&space;boundry}\\&space;\\&space;V&space;=&space;A_L&space;&plus;&space;(A_U&space;&plus;&space;A_L)&space;\cdot&space;\tfrac{V_Q&space;-&space;V_L}{V_U&space;-&space;V_L}\\" title="\large \\ A_L = \text{Altitude of the lower boundary}\\ A_U = \text{Altitude of the upper boundary}\\ V_Q = \text{Queried volume}\\ V_L = \text{Volume of the lower boundry}\\ V_U = \text{Volume of the upper boundry}\\ \\ V = A_L + (A_U + A_L) \cdot \tfrac{V_Q - V_L}{V_U - V_L}\\" /></a>

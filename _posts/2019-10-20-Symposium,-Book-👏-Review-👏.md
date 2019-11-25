@@ -4,6 +4,7 @@ I read the whole book and I liked it, but I felt like I needed something more lo
 ## Random note
 * I was surprised how bisexual everyone was. When some of them talked about the concept of love, they were talking about the homosexual relationship between an older and a younger man.
 * One person even said that love of boys is a more noble kind of love because they are born smarter and overall better.
+<p>&nbsp;</p>
 
 ## Notes on the actual point of the book:
 
