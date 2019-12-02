@@ -5,16 +5,16 @@ The task is to write a program that outputs pairs of airplanes that are in dange
 Each airplane (let's just call them points) has two coordinates [_x_, _y_] and a name. Your goal is to write out the shortest distance that can be found between these points and the names of the points that are separated by that distance.
 
 The input & output could look something like this:
- >Input:
- >[0, 0] Airplane1
- >[5, 5] Airplane2
- >[3, 0] Airplane3
- >[8, 5] Airplane4
+ >Input:  
+ >[0, 0] Airplane1  
+ >[5, 5] Airplane2  
+ >[3, 0] Airplane3  
+ >[8, 5] Airplane4  
  
- >Output:
- >Shortest distance: 3
- >Airplane1 - Airplane3
- >Airplane2 - Airplane4
+ >Output:  
+ >Shortest distance: 3  
+ >Airplane1 - Airplane3  
+ >Airplane2 - Airplane4  
 
 ## The solution
 
