@@ -28,7 +28,6 @@ Airplane2 - Airplane4</p>
 <p>For our solution, we’ll be using a divide and conquer approach as described <a href="https://en.wikipedia.org/wiki/Closest_pair_of_points_problem">here</a></p>
 
 <p>The quick summary goes like this:</p>
-<p>&nbsp;</p>
 
 <p>we take our points and split them in half:
 <img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points1.png" alt="points_divided_in_half" /></p>
@@ -50,12 +49,11 @@ Airplane2 - Airplane4</p>
 <p>&nbsp;</p>
 
 <p><strong>d)</strong> Calculating the shortest distance on the edges of our groups takes O(n) time, here’s why:</p>
-<p>&nbsp;</p>
 
 <p>When traversing the array of points that are located in the strip shown above (going from lowest to highest), the shortest distance can only occur between points that are separated by less than 8 points of each other when sorted by Y. Look at this visualization below:
-<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points4.png" alt="strip_zoomed_in" />
-Imagine drawing a rectangle like this for every point you visit when traversing the array. You can’t fit more than 8 points in it, because if you could, the distance <em>d</em> would be smaller since it represents the shortest distance between 2 points on each side.</p>
-<p>&nbsp;</p>
+<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points4.png" alt="strip_zoomed_in" /></p>
+
+<p>Imagine drawing a rectangle like this for every point you visit when traversing the array. You can’t fit more than 8 points in it, because if you could, the distance <em>d</em> would be smaller since it represents the shortest distance between 2 points on each side.</p>
 
 <p>So since we’re checking only up to 8 points for each point, the complexity is O(n).</p>
 <p>&nbsp;</p>
@@ -64,26 +62,24 @@ Imagine drawing a rectangle like this for every point you visit when traversing 
 <p>&nbsp;</p>
 
 <h3 id="3-so-why-wont-this-work-out-of-the-box">3) So, why won’t this work out of the box?</h3>
-<p>&nbsp;</p>
 <p>The reason is, that <strong>the algorithm above assumes unique <em>x</em> coordinates</strong> for each point. Meaning,  2 points can’t share the same <em>x</em> coordinate, which isn’t the case in our problem.</p>
 <p>&nbsp;</p>
 
 <p>So how can this go wrong?</p>
-<p>&nbsp;</p>
 
 <p>Well, your sorting will most definitely fail. Imagine an input of points with <em>x</em> values like this:</p>
-<p>&nbsp;</p>
 
-<p>1 2 3 4 5 5 5 5 5 5 5 5</p>
-<p>&nbsp;</p>
+<blockquote>
+  <p>1 2 3 4 5 5 5 5 5 5 5 5</p>
+</blockquote>
 
 <p>You pick the middle point (5), and split the array that is ordered by <em>Y</em> into two groups: points with <em>X</em> that is smaller than 5 and points with <em>X</em> bigger or equal to 5 and get 2 groups:</p>
-<p>&nbsp;</p>
 
-<p>1 2 3 4 
-and 
+<blockquote>
+  <p>1 2 3 4<br />
+and<br />
 5 5 5 5 5 5 5 5</p>
-<p>&nbsp;</p>
+</blockquote>
 
 <p>And from this point onwards, you won’t ever split the fives apart meaning that your algorithm will never stop.</p>
 <p>&nbsp;</p>
@@ -91,7 +87,6 @@ and
 <h3 id="4-how-can-we-fix-this-then">4) How can we fix this then?</h3>
 
 <p>To fix this, we are going to choose more than one “middle point” when splitting our points into 2 groups and we won’t be including them in neither of these groups. More precisely, we are going to choose all points that have the same <em>X</em>  as the point at the  (n/2)-th index, as our middle points.</p>
-<p>&nbsp;</p>
 
 <p>After that, we will calculate the shortest distance in each group and then traverse the strip with our middle points included.</p>
 <p>&nbsp;</p>
@@ -99,9 +94,7 @@ and
 <h3 id="5-it-still-doesnt-work-whats-wrong">5) It still doesn’t work, what’s wrong?</h3>
 
 <p>The problem that is most likely arising here is, that the 8 point rule described above doesn’t hold anymore. If we get an input with points that have the same <em>X</em> and <em>Y</em> and they end up as our middle points, then there can be an infinite amount of points in our rectangle that is visualized above.</p>
-<p>&nbsp;</p>
 
 <p>To mitigate this, we just simply allocate another dynamic array to hold the indexes of all points that are less than <em>d</em> (the shortest distance that we found so far) below our current point, when we traverse the split.</p>
-<p>&nbsp;</p>
 
 <p>With all that, our algorithm should now be modified enough to work on this particular problem.</p>
