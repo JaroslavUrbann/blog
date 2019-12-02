@@ -5,8 +5,8 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Dec 2019 09:18:15 +0100</pubDate>
-    <lastBuildDate>Mon, 02 Dec 2019 09:18:15 +0100</lastBuildDate>
+    <pubDate>Mon, 02 Dec 2019 09:28:16 +0100</pubDate>
+    <lastBuildDate>Mon, 02 Dec 2019 09:28:16 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -19,7 +19,7 @@
 
 &lt;p&gt;The input &amp;amp; output could look something like this:&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;Input:&lt;br /&gt;
+  &lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;br /&gt;
 [0, 0] Airplane1&lt;br /&gt;
 [5, 5] Airplane2&lt;br /&gt;
 [3, 0] Airplane3&lt;br /&gt;
@@ -27,7 +27,7 @@
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Output:&lt;br /&gt;
+  &lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;br /&gt;
 Shortest distance: 3&lt;br /&gt;
 Airplane1 - Airplane3&lt;br /&gt;
 Airplane2 - Airplane4&lt;/p&gt;
@@ -42,9 +42,9 @@ Airplane2 - Airplane4&lt;/p&gt;
 &lt;p&gt;The quick summary goes like this:&lt;/p&gt;
 
 &lt;p&gt;we take our points and split them in half:
-&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points1.png&quot; alt=&quot;points_divided_in_half&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points1.png&quot; alt=&quot;points_divided_in_half&quot; /&gt;&lt;br /&gt;
 we calculate the shortest distance between 2 points in each half:
-&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points2.png&quot; alt=&quot;points_with_distance&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points2.png&quot; alt=&quot;points_with_distance&quot; /&gt;&lt;br /&gt;
 we check if there is a pair of points in closer proximity to each other than the distance that we already found, on the edge of these 2 groups:
 &lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points3.png&quot; alt=&quot;checking_the_strip&quot; /&gt;&lt;/p&gt;
 &lt;h3 id=&quot;2-things-to-note&quot;&gt;2) Things to note:&lt;/h3&gt;
@@ -67,7 +67,7 @@ Imagine drawing a rectangle like this for every point you visit when traversing 
 
 &lt;h3 id=&quot;3-so-why-wont-this-work-out-of-the-box&quot;&gt;3) So, why won’t this work out of the box?&lt;/h3&gt;
 
-&lt;p&gt;The reason is, that the algorithm above assumes unique &lt;em&gt;x&lt;/em&gt; coordinates for each point. Meaning,  2 points can’t share the same &lt;em&gt;x&lt;/em&gt; coordinate, which isn’t the case in our problem.&lt;/p&gt;
+&lt;p&gt;The reason is, that &lt;strong&gt;the algorithm above assumes unique &lt;em&gt;x&lt;/em&gt; coordinates&lt;/strong&gt; for each point. Meaning,  2 points can’t share the same &lt;em&gt;x&lt;/em&gt; coordinate, which isn’t the case in our problem.&lt;/p&gt;
 
 &lt;p&gt;So how can this go wrong?&lt;/p&gt;
 

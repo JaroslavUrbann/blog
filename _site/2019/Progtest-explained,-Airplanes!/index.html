@@ -6,7 +6,7 @@
 
 <p>The input &amp; output could look something like this:</p>
 <blockquote>
-  <p>Input:<br />
+  <p><strong>Input:</strong><br />
 [0, 0] Airplane1<br />
 [5, 5] Airplane2<br />
 [3, 0] Airplane3<br />
@@ -14,7 +14,7 @@
 </blockquote>
 
 <blockquote>
-  <p>Output:<br />
+  <p><strong>Output:</strong><br />
 Shortest distance: 3<br />
 Airplane1 - Airplane3<br />
 Airplane2 - Airplane4</p>
@@ -29,9 +29,9 @@ Airplane2 - Airplane4</p>
 <p>The quick summary goes like this:</p>
 
 <p>we take our points and split them in half:
-<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points1.png" alt="points_divided_in_half" />
+<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points1.png" alt="points_divided_in_half" /><br />
 we calculate the shortest distance between 2 points in each half:
-<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points2.png" alt="points_with_distance" />
+<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points2.png" alt="points_with_distance" /><br />
 we check if there is a pair of points in closer proximity to each other than the distance that we already found, on the edge of these 2 groups:
 <img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points3.png" alt="checking_the_strip" /></p>
 <h3 id="2-things-to-note">2) Things to note:</h3>
@@ -54,7 +54,7 @@ Imagine drawing a rectangle like this for every point you visit when traversing 
 
 <h3 id="3-so-why-wont-this-work-out-of-the-box">3) So, why won’t this work out of the box?</h3>
 
-<p>The reason is, that the algorithm above assumes unique <em>x</em> coordinates for each point. Meaning,  2 points can’t share the same <em>x</em> coordinate, which isn’t the case in our problem.</p>
+<p>The reason is, that <strong>the algorithm above assumes unique <em>x</em> coordinates</strong> for each point. Meaning,  2 points can’t share the same <em>x</em> coordinate, which isn’t the case in our problem.</p>
 
 <p>So how can this go wrong?</p>
 
