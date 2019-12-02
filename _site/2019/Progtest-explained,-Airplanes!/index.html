@@ -1,0 +1,85 @@
+
+<h2 id="problem-description">Problem description</h2>
+<p>The task is to write a program that outputs pairs of airplanes that are in danger of collision.</p>
+
+<p>Each airplane (let’s just call them points) has two coordinates [<em>x</em>, <em>y</em>] and a name. Your goal is to write out the shortest distance that can be found between these points and the names of the points that are separated by that distance.</p>
+
+<p>The input &amp; output could look something like this:</p>
+<blockquote>
+  <p>Input:
+[0, 0] Airplane1
+[5, 5] Airplane2
+[3, 0] Airplane3
+[8, 5] Airplane4</p>
+</blockquote>
+
+<blockquote>
+  <p>Output:
+Shortest distance: 3
+Airplane1 - Airplane3
+Airplane2 - Airplane4</p>
+</blockquote>
+
+<h2 id="the-solution">The solution</h2>
+
+<h3 id="1-designing-the-algorithm">1) Designing the algorithm</h3>
+
+<p>For our solution, we’ll be using a divide and conquer approach as described <a href="https://en.wikipedia.org/wiki/Closest_pair_of_points_problem">here</a></p>
+
+<p>The quick summary goes like this:</p>
+
+<p>we take our points and split them in half:
+<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points1.png" alt="points_divided_in_half" />
+we calculate the shortest distance between 2 points in each half:
+<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points2.png" alt="points_with_distance" />
+we check if there is a pair of points in closer proximity to each other than the distance that we already found, on the edge of these 2 groups:
+<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points3.png" alt="checking_the_strip" /></p>
+<h3 id="2-things-to-note">2) Things to note:</h3>
+
+<p><strong>a)</strong> The x coordinate at which we split our points is the x coordinate of a point at the (n/2)-th index when our points are sorted by x.</p>
+
+<p><strong>b)</strong> Calculating the shortest distance in the left and right group respectively is done recursively by the same algorithm until there are only around 3 - 4 points left and then we just do a brute force search.</p>
+
+<p><strong>c)</strong> Splitting the points and calculating the shortest distance in each group takes O(log N) time.</p>
+
+<p><strong>d)</strong> Calculating the shortest distance on the edges of our groups takes O(n) time, here’s why:</p>
+
+<p>When traversing the array of points that are located in the strip shown above (going from lowest to highest), the shortest distance can only occur between points that are separated by less than 8 points of each other when sorted by Y. Look at this visualization below:
+<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/points4.png" alt="strip_zoomed_in" />
+Imagine drawing a rectangle like this for every point you visit when traversing the array. You can’t fit more than 8 points in it, because if you could, the distance <em>d</em> would be smaller since it represents the shortest distance between 2 points on each side.</p>
+
+<p>So since we’re checking only up to 8 points for each point, the complexity is O(n).</p>
+
+<p><strong>e)</strong> Deriving from the observations above, at each step of our recursive algorithm, we’ll need to have our points saved twice,  ordered by <em>x</em> in one array (to split them into 2 groups) and ordered by <em>y</em> in another array (to traverse the strip).</p>
+
+<h3 id="3-so-why-wont-this-work-out-of-the-box">3) So, why won’t this work out of the box?</h3>
+
+<p>The reason is, that the algorithm above assumes unique <em>x</em> coordinates for each point. Meaning,  2 points can’t share the same <em>x</em> coordinate, which isn’t the case in our problem.</p>
+
+<p>So how can this go wrong?</p>
+
+<p>Well, your sorting will most definitely fail. Imagine an input of points with <em>x</em> values like this:</p>
+
+<p>1 2 3 4 5 5 5 5 5 5 5 5</p>
+
+<p>You pick the middle point (5), and split the array that is ordered by <em>Y</em> into two groups: points with <em>X</em> that is smaller than 5 and points with <em>X</em> bigger or equal to 5 and get 2 groups:</p>
+
+<p>1 2 3 4 
+and 
+5 5 5 5 5 5 5 5</p>
+
+<p>And from this point onwards, you won’t ever split the fives apart meaning that your algorithm will never stop.</p>
+
+<h3 id="4-how-can-we-fix-this-then">4) How can we fix this then?</h3>
+
+<p>To fix this, we are going to choose more than one “middle point” when splitting our points into 2 groups and we won’t be including them in neither of these groups. More precisely, we are going to choose all points that have the same <em>X</em>  as the point at the  (n/2)-th index, as our middle points.</p>
+
+<p>After that, we will calculate the shortest distance in each group and then traverse the strip with our middle points included.</p>
+
+<h3 id="5-it-still-doesnt-work-whats-wrong">5) It still doesn’t work, what’s wrong?</h3>
+
+<p>The problem that is most likely arising here is, that the 8 point rule described above doesn’t hold anymore. If we get an input with points that have the same <em>X</em> and <em>Y</em> and they end up as our middle points, then there can be an infinite amount of points in our rectangle that is visualized above.</p>
+
+<p>To mitigate this, we just simply allocate another dynamic array to hold the indexes of all points that are less than <em>d</em> (the shortest distance that we found so far) below our current point, when we traverse the split.</p>
+
+<p>With all that, our algorithm should now be modified enough to work on this particular problem.</p>
