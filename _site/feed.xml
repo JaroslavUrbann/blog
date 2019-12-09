@@ -5,8 +5,8 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Dec 2019 09:19:59 +0100</pubDate>
-    <lastBuildDate>Mon, 09 Dec 2019 09:19:59 +0100</lastBuildDate>
+    <pubDate>Mon, 09 Dec 2019 09:22:30 +0100</pubDate>
+    <lastBuildDate>Mon, 09 Dec 2019 09:22:30 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -22,24 +22,25 @@
 &lt;p&gt;The input &amp;amp; output could look something like this:&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;Common phrases:&lt;/strong&gt;
-30:Qui dolorem ipsum quia dolor sit amet
-70:magnam aliquam quaerat
-40:torquent per conubia nostra
-90:tellus id magna elementum
-&lt;strong&gt;Queries:&lt;/strong&gt;
-agna
+&lt;strong&gt;Common phrases:&lt;/strong&gt;&lt;br /&gt;
+30:Qui dolorem ipsum quia dolor sit amet&lt;br /&gt;
+70:magnam aliquam quaerat&lt;br /&gt;
+40:torquent per conubia nostra&lt;br /&gt;
+90:tellus id magna elementum&lt;br /&gt;
+&lt;strong&gt;Queries:&lt;/strong&gt;&lt;br /&gt;
+agna&lt;br /&gt;
 dolor&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;Found: 2&lt;/strong&gt;
-tellus id magna elementum
-magnam aliquam quaerat
-&lt;strong&gt;Found: 1&lt;/strong&gt;
+&lt;strong&gt;Found: 2&lt;/strong&gt;&lt;br /&gt;
+tellus id magna elementum&lt;br /&gt;
+magnam aliquam quaerat&lt;br /&gt;
+&lt;strong&gt;Found: 1&lt;/strong&gt;&lt;br /&gt;
 Qui dolorem ipsum quia dolor sit amet&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;

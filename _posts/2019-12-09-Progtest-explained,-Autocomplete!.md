@@ -8,21 +8,22 @@ The input contains a set of phrases with usage frequencies and a set of queries.
 
 The input & output could look something like this:
  >**Input:**  
-**Common phrases:**
-30:Qui dolorem ipsum quia dolor sit amet
-70:magnam aliquam quaerat
-40:torquent per conubia nostra
-90:tellus id magna elementum
-**Queries:**
-agna
-dolor
+**Common phrases:**  
+30:Qui dolorem ipsum quia dolor sit amet  
+70:magnam aliquam quaerat  
+40:torquent per conubia nostra  
+90:tellus id magna elementum  
+**Queries:**  
+agna  
+dolor  
  
  >**Output:**  
-**Found: 2**
-tellus id magna elementum
-magnam aliquam quaerat
-**Found: 1**
-Qui dolorem ipsum quia dolor sit amet
+**Found: 2**  
+tellus id magna elementum  
+magnam aliquam quaerat  
+**Found: 1**  
+Qui dolorem ipsum quia dolor sit amet  
+
 <p>&nbsp;</p>
 
 ## The solution
