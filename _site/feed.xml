@@ -5,8 +5,8 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Dec 2019 09:13:41 +0100</pubDate>
-    <lastBuildDate>Mon, 09 Dec 2019 09:13:41 +0100</lastBuildDate>
+    <pubDate>Mon, 09 Dec 2019 09:19:59 +0100</pubDate>
+    <lastBuildDate>Mon, 09 Dec 2019 09:19:59 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -92,10 +92,10 @@ I ended up just creating one big suffix array for all the phrases altogether.&lt
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;b)&lt;/strong&gt; Each suffix has these attributes:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Pointer to a phrase
-Starting index (Where the suffix starts in the phrase)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pointer to a phrase&lt;/li&gt;
+  &lt;li&gt;Starting index (Where the suffix starts in the phrase)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;c)&lt;/strong&gt; Fill the array by iterating once through all the phrases&lt;/p&gt;

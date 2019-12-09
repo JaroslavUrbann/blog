@@ -71,8 +71,8 @@ I ended up just creating one big suffix array for all the phrases altogether.
 <p>&nbsp;</p>
 
 **b)** Each suffix has these attributes:
->Pointer to a phrase
-> Starting index (Where the suffix starts in the phrase)
+- Pointer to a phrase  
+- Starting index (Where the suffix starts in the phrase)
 <p>&nbsp;</p>
 
 **c)** Fill the array by iterating once through all the phrases
