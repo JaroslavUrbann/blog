@@ -35,26 +35,41 @@ BOARD *child1, *child2;<br />
   <p>int cutBoard ( board, max_area )<br />
       if ( area of the board &lt; max_area &amp;&amp; 1:2 &lt; ratio &lt; 2:1)<br />
             return 0</p>
-
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
   <p>      number_of_cuts = INT_MAX</p>
-
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
   <p>      child1.width = width / 2<br />
       child2.width = width - child1.width</p>
-
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
   <p>      while ( child1.width &gt; 0 )<br />
             cuts1 = cutBoard ( child1, max_area )<br />
             cuts2 = cutBoard ( child2, max_area )</p>
-
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
   <p>            if ( cuts1 + cuts2 + 1 &lt; number_of_cuts )<br />
                   number_of_cuts = cuts1 + cuts2 + 1<br />
                   board.child1 = child1<br />
                   board.child2 = child2</p>
-
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
   <p>            child1.width - - <br />
             child2.width ++</p>
-
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
   <p>      ** do the same for height **</p>
-
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
   <p>      return number_of_cuts</p>
 </blockquote>
 
