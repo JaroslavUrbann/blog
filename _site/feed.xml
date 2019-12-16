@@ -5,8 +5,8 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Dec 2019 08:56:35 +0100</pubDate>
-    <lastBuildDate>Mon, 16 Dec 2019 08:56:35 +0100</lastBuildDate>
+    <pubDate>Mon, 16 Dec 2019 08:58:45 +0100</pubDate>
+    <lastBuildDate>Mon, 16 Dec 2019 08:58:45 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -48,41 +48,27 @@ BOARD *child1, *child2;&lt;br /&gt;
   &lt;p&gt;int cutBoard ( board, max_area )&lt;br /&gt;
       if ( area of the board &amp;lt; max_area &amp;amp;&amp;amp; 1:2 &amp;lt; ratio &amp;lt; 2:1)&lt;br /&gt;
             return 0&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;blockquote&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
   &lt;p&gt;      number_of_cuts = INT_MAX&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;blockquote&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
   &lt;p&gt;      child1.width = width / 2&lt;br /&gt;
       child2.width = width - child1.width&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;blockquote&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
   &lt;p&gt;      while ( child1.width &amp;gt; 0 )&lt;br /&gt;
             cuts1 = cutBoard ( child1, max_area )&lt;br /&gt;
             cuts2 = cutBoard ( child2, max_area )&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;blockquote&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
   &lt;p&gt;            if ( cuts1 + cuts2 + 1 &amp;lt; number_of_cuts )&lt;br /&gt;
                   number_of_cuts = cuts1 + cuts2 + 1&lt;br /&gt;
                   board.child1 = child1&lt;br /&gt;
                   board.child2 = child2&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;blockquote&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
   &lt;p&gt;            child1.width - - &lt;br /&gt;
             child2.width ++&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;blockquote&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
   &lt;p&gt;      ** do the same for height **&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;blockquote&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
   &lt;p&gt;      return number_of_cuts&lt;/p&gt;
 &lt;/blockquote&gt;
 

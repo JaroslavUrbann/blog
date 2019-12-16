@@ -34,27 +34,27 @@ As I said, there isn't anything to this problem other than just understanding re
 >int cutBoard ( board, max_area )  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( area of the board < max_area && 1:2 < ratio < 2:1)  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0  
-<p>&nbsp;</p>
+><p>&nbsp;</p>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_of_cuts = INT_MAX  
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+><p>&nbsp;</p>
+><p>&nbsp;</p>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1.width = width / 2  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child2.width = width - child1.width  
-<p>&nbsp;</p>
+><p>&nbsp;</p>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while ( child1.width > 0 )  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuts1 = cutBoard ( child1, max_area )  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuts2 = cutBoard ( child2, max_area )  
-<p>&nbsp;</p>
+><p>&nbsp;</p>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( cuts1 + cuts2 + 1 < number_of_cuts )  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_of_cuts = cuts1 + cuts2 + 1  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;board.child1 = child1  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;board.child2 = child2  
-<p>&nbsp;</p>
+><p>&nbsp;</p>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1.width - -   
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child2.width ++  
-<p>&nbsp;</p>
+><p>&nbsp;</p>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** do the same for height **  
-<p>&nbsp;</p>
+><p>&nbsp;</p>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return number_of_cuts  
 
 
