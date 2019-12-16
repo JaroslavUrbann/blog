@@ -50,7 +50,7 @@ As I said, there isn't anything to this problem other than just understanding re
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;board.child1 = child1  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;board.child2 = child2  
 ><p>&nbsp;</p>
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1.width - -   
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1.width --   
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child2.width ++  
 ><p>&nbsp;</p>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** do the same for height **  
@@ -63,4 +63,4 @@ As this program would be incredibly slow by default, there **needs** to be an op
 The one I opted for is very simple. You just allocate a 2D array that is about the size of your input board. Each item in the array has 2 attributes: number_of_cuts and board.
 Now you just cache all the values you get. This speeds things up immersely since you never need to recalculate anything.
 <p>&nbsp;</p>
-Note that this optimization can be easily "broken" just by inputting large values (for example Size: 1000 x 1000, Maximum Area: 500 000, requires just one cut but allocates a large amount of memory). But for this particular problem, it is sufficient.
+Note that **this optimization can be easily "broken"** just by inputting large values (for example Size: 1000 x 1000, Maximum Area: 500 000, requires just one cut but allocates a large amount of memory). But for this particular problem, it is sufficient.

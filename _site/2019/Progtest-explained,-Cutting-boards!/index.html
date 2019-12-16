@@ -51,7 +51,7 @@ BOARD *child1, *child2;<br />
                   board.child1 = child1<br />
                   board.child2 = child2</p>
   <p>&nbsp;</p>
-  <p>            child1.width - - <br />
+  <p>            child1.width – <br />
             child2.width ++</p>
   <p>&nbsp;</p>
   <p>      ** do the same for height **</p>
@@ -64,4 +64,4 @@ BOARD *child1, *child2;<br />
 The one I opted for is very simple. You just allocate a 2D array that is about the size of your input board. Each item in the array has 2 attributes: number_of_cuts and board.
 Now you just cache all the values you get. This speeds things up immersely since you never need to recalculate anything.</p>
 <p>&nbsp;</p>
-<p>Note that this optimization can be easily “broken” just by inputting large values (for example Size: 1000 x 1000, Maximum Area: 500 000, requires just one cut but allocates a large amount of memory). But for this particular problem, it is sufficient.</p>
+<p>Note that <strong>this optimization can be easily “broken”</strong> just by inputting large values (for example Size: 1000 x 1000, Maximum Area: 500 000, requires just one cut but allocates a large amount of memory). But for this particular problem, it is sufficient.</p>

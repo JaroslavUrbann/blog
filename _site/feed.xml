@@ -5,8 +5,8 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Dec 2019 08:58:45 +0100</pubDate>
-    <lastBuildDate>Mon, 16 Dec 2019 08:58:45 +0100</lastBuildDate>
+    <pubDate>Mon, 16 Dec 2019 09:01:25 +0100</pubDate>
+    <lastBuildDate>Mon, 16 Dec 2019 09:01:25 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -64,7 +64,7 @@ BOARD *child1, *child2;&lt;br /&gt;
                   board.child1 = child1&lt;br /&gt;
                   board.child2 = child2&lt;/p&gt;
   &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-  &lt;p&gt;            child1.width - - &lt;br /&gt;
+  &lt;p&gt;            child1.width – &lt;br /&gt;
             child2.width ++&lt;/p&gt;
   &lt;p&gt;&amp;nbsp;&lt;/p&gt;
   &lt;p&gt;      ** do the same for height **&lt;/p&gt;
@@ -77,7 +77,7 @@ BOARD *child1, *child2;&lt;br /&gt;
 The one I opted for is very simple. You just allocate a 2D array that is about the size of your input board. Each item in the array has 2 attributes: number_of_cuts and board.
 Now you just cache all the values you get. This speeds things up immersely since you never need to recalculate anything.&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;Note that this optimization can be easily “broken” just by inputting large values (for example Size: 1000 x 1000, Maximum Area: 500 000, requires just one cut but allocates a large amount of memory). But for this particular problem, it is sufficient.&lt;/p&gt;
+&lt;p&gt;Note that &lt;strong&gt;this optimization can be easily “broken”&lt;/strong&gt; just by inputting large values (for example Size: 1000 x 1000, Maximum Area: 500 000, requires just one cut but allocates a large amount of memory). But for this particular problem, it is sufficient.&lt;/p&gt;
 </description>
         <pubDate>Mon, 16 Dec 2019 00:00:00 +0100</pubDate>
         <link>https://jaroslavurbann.github.io/blog/2019/Progtest-explained,-Cutting-boards!/</link>
