@@ -1,0 +1,66 @@
+<p><img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/chopping_wood.gif" alt="Get your axes out" /></p>
+<h2 id="problem-description">Problem description</h2>
+<p>The task is to write a program that effectively cuts boards into smaller pieces for transportation.</p>
+<p>&nbsp;</p>
+
+<p>You get a board of a given size and your task is to use the lowest number of cuts possible to split it into smaller boards. These smaller boards need to satisfy a maximum area constraint given to you in the input. Additionally, the sizes of the final boards can’t be in a ratio larger than 2:1 or smaller than 1:2.</p>
+
+<h4 id="the-input--output-could-look-something-like-this">The input &amp; output could look something like this:</h4>
+<p><img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/Selection_029.png =x400" alt="An example input" /></p>
+
+<h2 id="the-solution">The solution</h2>
+
+<p>This task was designed to teach students recursion and so the bulk of the difficulty is hidden in the implementation itself, rather than the algorithm. With that, I’ll just quickly go through the algorithm:</p>
+<p>&nbsp;</p>
+
+<h3 id="1-realizing-that-there-are-no-algorithmic-shortcuts">1) Realizing that there are no algorithmic shortcuts</h3>
+<p>After spending a few minutes with your pen and paper thinking about this problem, you should conclude that there is no general rule to be found in this particular problem. You’ll realize that for every pattern you’ll find, you can find a counter-example. And if you can’t, Progtest can.
+Brute-force is the only option making this an algorithmically boring problem.</p>
+<p>&nbsp;</p>
+
+<h3 id="2-a-simple-binary-tree-structure">2) A simple binary tree structure</h3>
+<p>If a board is cut, it has to be split into 2 pieces. Each of these pieces is then a board in itself. Intuitively, this creates a binary tree-like structure where each node has 2 children like this:</p>
+<blockquote>
+  <p>typedef struct BOARD {
+int width, height;
+BOARD *child1, *child2;
+} board;</p>
+</blockquote>
+<p>&nbsp;</p>
+
+<h3 id="3-the-recursive-function">3) The recursive function</h3>
+<p>As I said, there isn’t anything to this problem other than just understanding recursion. The whole program can be stripped down to one recursive function that could work something like this:</p>
+
+<blockquote>
+  <p>int cutBoard ( board, max_area )<br />
+            if ( area of the board &lt; max_area &amp;&amp; 1:2 &lt; ratio &lt; 2:1)<br />
+                        return 0</p>
+
+  <p>            number_of_cuts = INT_MAX</p>
+
+  <p>            child1.width = width / 2<br />
+            child2.width = width - child1.width</p>
+
+  <p>            while ( child1.width &gt; 0 )<br />
+                        cuts1 = cutBoard ( child1, max_area )<br />
+                        cuts2 = cutBoard ( child2, max_area )</p>
+
+  <p>                        if ( cuts1 + cuts2 + 1 &lt; number_of_cuts )<br />
+                                    number_of_cuts = cuts1 + cuts2 + 1<br />
+                                    board.child1 = child1<br />
+                                    board.child2 = child2</p>
+
+  <p>                        child1.width - - <br />
+                        child2.width ++</p>
+
+  <p>            ** do the same for height **</p>
+
+  <p>            return number_of_cuts</p>
+</blockquote>
+
+<h3 id="4-a-simple-optimization">4) A simple optimization</h3>
+<p>As this program would be incredibly slow by default, there <strong>needs</strong> to be an optimization possible somehow.
+The one I opted for is very simple. You just allocate a 2D array that is about the size of your input board. Each item in the array has 2 attributes: number_of_cuts and board.
+Now you just cache all the values you get. This speeds things up immersely since you never need to recalculate anything.</p>
+<p>&nbsp;</p>
+<p>Note that this optimization can be easily “broken” just by inputting large values (for example Size: 1000 x 1000, Maximum Area: 500 000, requires just one cut but allocates a large amount of memory). But for this particular problem, it is sufficient.</p>
