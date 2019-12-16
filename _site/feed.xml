@@ -5,8 +5,8 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Dec 2019 08:36:56 +0100</pubDate>
-    <lastBuildDate>Mon, 16 Dec 2019 08:36:56 +0100</lastBuildDate>
+    <pubDate>Mon, 16 Dec 2019 08:51:34 +0100</pubDate>
+    <lastBuildDate>Mon, 16 Dec 2019 08:51:34 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -19,7 +19,7 @@
 &lt;p&gt;You get a board of a given size and your task is to use the lowest number of cuts possible to split it into smaller boards. These smaller boards need to satisfy a maximum area constraint given to you in the input. Additionally, the sizes of the final boards can’t be in a ratio larger than 2:1 or smaller than 1:2.&lt;/p&gt;
 
 &lt;h4 id=&quot;the-input--output-could-look-something-like-this&quot;&gt;The input &amp;amp; output could look something like this:&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/Selection_029.png =x400&quot; alt=&quot;An example input&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/Selection_029.png&quot; alt=&quot;An example input&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;
 
@@ -34,9 +34,9 @@ Brute-force is the only option making this an algorithmically boring problem.&lt
 &lt;h3 id=&quot;2-a-simple-binary-tree-structure&quot;&gt;2) A simple binary tree structure&lt;/h3&gt;
 &lt;p&gt;If a board is cut, it has to be split into 2 pieces. Each of these pieces is then a board in itself. Intuitively, this creates a binary tree-like structure where each node has 2 children like this:&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;typedef struct BOARD {
-int width, height;
-BOARD *child1, *child2;
+  &lt;p&gt;typedef struct BOARD {&lt;br /&gt;
+int width, height;&lt;br /&gt;
+BOARD *child1, *child2;&lt;br /&gt;
 } board;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
@@ -46,29 +46,29 @@ BOARD *child1, *child2;
 
 &lt;blockquote&gt;
   &lt;p&gt;int cutBoard ( board, max_area )&lt;br /&gt;
-            if ( area of the board &amp;lt; max_area &amp;amp;&amp;amp; 1:2 &amp;lt; ratio &amp;lt; 2:1)&lt;br /&gt;
-                        return 0&lt;/p&gt;
+      if ( area of the board &amp;lt; max_area &amp;amp;&amp;amp; 1:2 &amp;lt; ratio &amp;lt; 2:1)&lt;br /&gt;
+            return 0&lt;/p&gt;
 
-  &lt;p&gt;            number_of_cuts = INT_MAX&lt;/p&gt;
+  &lt;p&gt;      number_of_cuts = INT_MAX&lt;/p&gt;
 
-  &lt;p&gt;            child1.width = width / 2&lt;br /&gt;
-            child2.width = width - child1.width&lt;/p&gt;
+  &lt;p&gt;      child1.width = width / 2&lt;br /&gt;
+      child2.width = width - child1.width&lt;/p&gt;
 
-  &lt;p&gt;            while ( child1.width &amp;gt; 0 )&lt;br /&gt;
-                        cuts1 = cutBoard ( child1, max_area )&lt;br /&gt;
-                        cuts2 = cutBoard ( child2, max_area )&lt;/p&gt;
+  &lt;p&gt;      while ( child1.width &amp;gt; 0 )&lt;br /&gt;
+            cuts1 = cutBoard ( child1, max_area )&lt;br /&gt;
+            cuts2 = cutBoard ( child2, max_area )&lt;/p&gt;
 
-  &lt;p&gt;                        if ( cuts1 + cuts2 + 1 &amp;lt; number_of_cuts )&lt;br /&gt;
-                                    number_of_cuts = cuts1 + cuts2 + 1&lt;br /&gt;
-                                    board.child1 = child1&lt;br /&gt;
-                                    board.child2 = child2&lt;/p&gt;
+  &lt;p&gt;            if ( cuts1 + cuts2 + 1 &amp;lt; number_of_cuts )&lt;br /&gt;
+                  number_of_cuts = cuts1 + cuts2 + 1&lt;br /&gt;
+                  board.child1 = child1&lt;br /&gt;
+                  board.child2 = child2&lt;/p&gt;
 
-  &lt;p&gt;                        child1.width - - &lt;br /&gt;
-                        child2.width ++&lt;/p&gt;
+  &lt;p&gt;            child1.width - - &lt;br /&gt;
+            child2.width ++&lt;/p&gt;
 
-  &lt;p&gt;            ** do the same for height **&lt;/p&gt;
+  &lt;p&gt;      ** do the same for height **&lt;/p&gt;
 
-  &lt;p&gt;            return number_of_cuts&lt;/p&gt;
+  &lt;p&gt;      return number_of_cuts&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;4-a-simple-optimization&quot;&gt;4) A simple optimization&lt;/h3&gt;

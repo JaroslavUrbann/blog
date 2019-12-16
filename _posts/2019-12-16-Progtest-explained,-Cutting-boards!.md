@@ -6,7 +6,7 @@ The task is to write a program that effectively cuts boards into smaller pieces 
 You get a board of a given size and your task is to use the lowest number of cuts possible to split it into smaller boards. These smaller boards need to satisfy a maximum area constraint given to you in the input. Additionally, the sizes of the final boards can't be in a ratio larger than 2:1 or smaller than 1:2.
 
 #### The input & output could look something like this:
-![An example input](https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/Selection_029.png =x400)
+<img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/Selection_029.png" alt="An example input" height="400"/>
  
 
 ## The solution
@@ -21,10 +21,10 @@ Brute-force is the only option making this an algorithmically boring problem.
 
 ### 2) A simple binary tree structure
 If a board is cut, it has to be split into 2 pieces. Each of these pieces is then a board in itself. Intuitively, this creates a binary tree-like structure where each node has 2 children like this:
->typedef struct BOARD {
->int width, height;
->BOARD *child1, *child2;
->} board;
+>typedef struct BOARD {  
+>int width, height;  
+>BOARD *child1, *child2;  
+>} board;  
 <p>&nbsp;</p>
 
 ### 3) The recursive function
@@ -32,30 +32,30 @@ As I said, there isn't anything to this problem other than just understanding re
 
 
 >int cutBoard ( board, max_area )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( area of the board < max_area && 1:2 < ratio < 2:1)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0  
->
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_of_cuts = INT_MAX  
->
->
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1.width = width / 2  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child2.width = width - child1.width  
->
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while ( child1.width > 0 )  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuts1 = cutBoard ( child1, max_area )  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuts2 = cutBoard ( child2, max_area )  
->
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( cuts1 + cuts2 + 1 < number_of_cuts )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_of_cuts = cuts1 + cuts2 + 1  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;board.child1 = child1  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;board.child2 = child2  
->
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1.width - -   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child2.width ++  
->
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** do the same for height **  
->
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return number_of_cuts  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( area of the board < max_area && 1:2 < ratio < 2:1)  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0  
+>  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_of_cuts = INT_MAX  
+>  
+>  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1.width = width / 2  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child2.width = width - child1.width  
+>  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while ( child1.width > 0 )  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuts1 = cutBoard ( child1, max_area )  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuts2 = cutBoard ( child2, max_area )  
+>  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( cuts1 + cuts2 + 1 < number_of_cuts )  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_of_cuts = cuts1 + cuts2 + 1  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;board.child1 = child1  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;board.child2 = child2  
+>  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1.width - -   
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child2.width ++  
+>  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** do the same for height **  
+>  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return number_of_cuts  
 
 
 ### 4) A simple optimization

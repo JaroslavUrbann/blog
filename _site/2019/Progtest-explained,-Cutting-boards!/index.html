@@ -6,7 +6,7 @@
 <p>You get a board of a given size and your task is to use the lowest number of cuts possible to split it into smaller boards. These smaller boards need to satisfy a maximum area constraint given to you in the input. Additionally, the sizes of the final boards can’t be in a ratio larger than 2:1 or smaller than 1:2.</p>
 
 <h4 id="the-input--output-could-look-something-like-this">The input &amp; output could look something like this:</h4>
-<p><img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/Selection_029.png =x400" alt="An example input" /></p>
+<p><img src="https://raw.githubusercontent.com/JaroslavUrbann/blog/master/assets/images/Selection_029.png" alt="An example input" height="400" /></p>
 
 <h2 id="the-solution">The solution</h2>
 
@@ -21,9 +21,9 @@ Brute-force is the only option making this an algorithmically boring problem.</p
 <h3 id="2-a-simple-binary-tree-structure">2) A simple binary tree structure</h3>
 <p>If a board is cut, it has to be split into 2 pieces. Each of these pieces is then a board in itself. Intuitively, this creates a binary tree-like structure where each node has 2 children like this:</p>
 <blockquote>
-  <p>typedef struct BOARD {
-int width, height;
-BOARD *child1, *child2;
+  <p>typedef struct BOARD {<br />
+int width, height;<br />
+BOARD *child1, *child2;<br />
 } board;</p>
 </blockquote>
 <p>&nbsp;</p>
@@ -33,29 +33,29 @@ BOARD *child1, *child2;
 
 <blockquote>
   <p>int cutBoard ( board, max_area )<br />
-            if ( area of the board &lt; max_area &amp;&amp; 1:2 &lt; ratio &lt; 2:1)<br />
-                        return 0</p>
+      if ( area of the board &lt; max_area &amp;&amp; 1:2 &lt; ratio &lt; 2:1)<br />
+            return 0</p>
 
-  <p>            number_of_cuts = INT_MAX</p>
+  <p>      number_of_cuts = INT_MAX</p>
 
-  <p>            child1.width = width / 2<br />
-            child2.width = width - child1.width</p>
+  <p>      child1.width = width / 2<br />
+      child2.width = width - child1.width</p>
 
-  <p>            while ( child1.width &gt; 0 )<br />
-                        cuts1 = cutBoard ( child1, max_area )<br />
-                        cuts2 = cutBoard ( child2, max_area )</p>
+  <p>      while ( child1.width &gt; 0 )<br />
+            cuts1 = cutBoard ( child1, max_area )<br />
+            cuts2 = cutBoard ( child2, max_area )</p>
 
-  <p>                        if ( cuts1 + cuts2 + 1 &lt; number_of_cuts )<br />
-                                    number_of_cuts = cuts1 + cuts2 + 1<br />
-                                    board.child1 = child1<br />
-                                    board.child2 = child2</p>
+  <p>            if ( cuts1 + cuts2 + 1 &lt; number_of_cuts )<br />
+                  number_of_cuts = cuts1 + cuts2 + 1<br />
+                  board.child1 = child1<br />
+                  board.child2 = child2</p>
 
-  <p>                        child1.width - - <br />
-                        child2.width ++</p>
+  <p>            child1.width - - <br />
+            child2.width ++</p>
 
-  <p>            ** do the same for height **</p>
+  <p>      ** do the same for height **</p>
 
-  <p>            return number_of_cuts</p>
+  <p>      return number_of_cuts</p>
 </blockquote>
 
 <h3 id="4-a-simple-optimization">4) A simple optimization</h3>
