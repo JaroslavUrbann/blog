@@ -14,10 +14,10 @@ Each entry can have multiple sets of solutions, for example, 9 in 3 := [126] or 
 Whenever the algorithm assigns a unique value to a cell, it checks whether it can remove any sets from the entries the cell belongs to. For example, if the algorithm sets "1" as the value of a cell belonging to a 9 in 3 entry, it can remove the set [234]. If the union of these sets then becomes different (in this case [123456] -> [12356]), the algorithm goes through all the cells of the given entry and recalculates the possible values that the cells can take.
 The possible values of a cell are calculated by doing an intersection of 4 values;
 
-1) union of the sets of the vertical entry
-2) union of the sets of the horizontal entry
-3) mask of determined values of the vertical entry
-4) mask of determined values of the horizontal entry
+1) union of the sets of the vertical entry  
+2) union of the sets of the horizontal entry  
+3) mask of determined values of the vertical entry  
+4) mask of determined values of the horizontal entry  
 
 The masks of determined values make sure that a cell can't take a value that was already set to a cell in the same entry. These masks are being updated at step (1) along with the total sum that the filled cells add up to so far.
 If the updated cell can take only one possible value, (1) gets called for that particular cell.

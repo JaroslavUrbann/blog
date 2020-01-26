@@ -5,8 +5,8 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Jan 2020 16:14:49 +0100</pubDate>
-    <lastBuildDate>Sun, 26 Jan 2020 16:14:49 +0100</lastBuildDate>
+    <pubDate>Sun, 26 Jan 2020 16:18:48 +0100</pubDate>
+    <lastBuildDate>Sun, 26 Jan 2020 16:18:48 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -27,9 +27,9 @@ The goal is to create a solver that can quickly count the number of possible sol
 Whenever the algorithm assigns a unique value to a cell, it checks whether it can remove any sets from the entries the cell belongs to. For example, if the algorithm sets “1” as the value of a cell belonging to a 9 in 3 entry, it can remove the set [234]. If the union of these sets then becomes different (in this case [123456] -&amp;gt; [12356]), the algorithm goes through all the cells of the given entry and recalculates the possible values that the cells can take.
 The possible values of a cell are calculated by doing an intersection of 4 values;&lt;/p&gt;
 
-&lt;p&gt;1) union of the sets of the vertical entry
-2) union of the sets of the horizontal entry
-3) mask of determined values of the vertical entry
+&lt;p&gt;1) union of the sets of the vertical entry&lt;br /&gt;
+2) union of the sets of the horizontal entry&lt;br /&gt;
+3) mask of determined values of the vertical entry&lt;br /&gt;
 4) mask of determined values of the horizontal entry&lt;/p&gt;
 
 &lt;p&gt;The masks of determined values make sure that a cell can’t take a value that was already set to a cell in the same entry. These masks are being updated at step (1) along with the total sum that the filled cells add up to so far.
