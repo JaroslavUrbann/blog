@@ -5,9 +5,34 @@
     <description>Minimalist blog.</description>
     <link>https://jaroslavurbann.github.io/blog/</link>
     <atom:link href="https://jaroslavurbann.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Jan 2020 16:21:30 +0100</pubDate>
-    <lastBuildDate>Sun, 26 Jan 2020 16:21:30 +0100</lastBuildDate>
+    <pubDate>Sat, 15 Feb 2020 00:05:56 +0100</pubDate>
+    <lastBuildDate>Sat, 15 Feb 2020 00:05:56 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>What I Learned From Pommerman</title>
+        <description>&lt;p&gt;Pommerman is a featured competition at neurips&lt;/p&gt;
+
+&lt;p&gt;I chose it as my introduction project for reinforcement learning. It has many nice properties. Partial visibility, multiagent environment, cooperation and competition aspects, communication between agents, sparse rewards, clear rules &amp;amp; familiar concept.&lt;/p&gt;
+
+&lt;p&gt;I thought it’s going to be about pushing as many operations into 100ms -&amp;gt; 100ms more than enough
+ -&amp;gt; lot of data (didn’t get a break after cnn)&lt;/p&gt;
+
+&lt;p&gt;especially after I tried to implement jacobs’ dial in a larger sense.&lt;/p&gt;
+
+&lt;p&gt;Imitation learning as bootstraping helped a lot (didn’t even try without it)&lt;/p&gt;
+
+&lt;p&gt;pure rl is tough!&lt;/p&gt;
+
+&lt;p&gt;an algorithm like ppo is very important, model structure doesn’t matter as much (as opposite to cnn where I just used adam and that was it)&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 07 Feb 2020 00:00:00 +0100</pubDate>
+        <link>https://jaroslavurbann.github.io/blog/2020/What-I-learned-from-Pommerman/</link>
+        <guid isPermaLink="true">https://jaroslavurbann.github.io/blog/2020/What-I-learned-from-Pommerman/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Progtest Explained, Kakuro!</title>
@@ -538,17 +563,6 @@ The natural time spent distribution of any sort of endeavor looks something like
         <pubDate>Wed, 14 Aug 2019 00:00:00 +0200</pubDate>
         <link>https://jaroslavurbann.github.io/blog/2019/Try-stopping-early/</link>
         <guid isPermaLink="true">https://jaroslavurbann.github.io/blog/2019/Try-stopping-early/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Overcomming Procrastination</title>
-        <description>&lt;p&gt;The key is in setting a specific goal. If you wish to be wealthy, then that’s a great start to becoming wealthy, but it’s not a great goal. &lt;strong&gt;Great goals should make you do things to achieve them&lt;/strong&gt;. When wishing to be wealthy, a great goal would be to, for example, launch a startup. It’s quite simple to see what things a startup CEO should know/do. They should study basic economics, follow current trends, learn how to be likable, read relevant books, etc.. And since you already have these things in your head, you’ll be inclined to pick a few that you like and start studying. It comes down to being able to see the specific things that you’re missing and you’ll automatically start filling the gaps to get closer to your goal.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 21 Jul 2019 00:00:00 +0200</pubDate>
-        <link>https://jaroslavurbann.github.io/blog/2019/Overcomming-procrastination/</link>
-        <guid isPermaLink="true">https://jaroslavurbann.github.io/blog/2019/Overcomming-procrastination/</guid>
         
         
       </item>
