@@ -3,7 +3,7 @@ title_left    : "Jaroslav Urban"
 title_right   : " blog"
 description   : "Minimalist blog."
 keywords      : "Jekyll, blog, AI, books, philosophy, cvut, ctu, fit"
-url           : jaroslavurban.eu
+url           : https://www.jaroslavurban.eu
 baseurl       : ""
 cover         : ""
 
